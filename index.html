@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="logo_s.png">
+<meta property="og:title" content="Pardal Alto Giro | Oficina e Moto Peças em Rio Preto">
+<meta property="og:description" content="Mais de 40 anos de experiência. Especialista Honda e Yamaha, injeção eletrônica, torno e retífica. Av. Potirendaba, 1192.">
+<meta property="og:image" content="https://pardalaltogiromotos.com.br/fachada_g2.jpg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>Pardal Alto Giro | Oficina e Moto Peças em Rio Preto</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Pardal Alto Giro — mais de 40 anos de experiência. Oficina de motos de todas as marcas, especialista Honda e Yamaha e injeção eletrônica, com moto peças em São José do Rio Preto. Revisão, troca de óleo, freios, relação, elétrica e peças. Av. Potirendaba, 1192.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: oficina de bairro com cara de painel de moto — faixas azul-marinho, laranja de giro alto, um conta-giros como assinatura */
+:root{
+  --navy:#0a1230; --navy-2:#111c44; --navy-3:#1a2858; --ink:#eef1fa; --muted:#a3add0;
+  --orange:#f26a1b; --orange-hi:#ff8f45; --line:rgba(163,173,208,.18); --ok:#3ccf7a; --warn:#ffc23d; --bad:#ff5a4f;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"Barlow","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1160px; --r:14px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--navy);color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-style:italic;font-weight:800;line-height:1;margin:0;text-wrap:balance;letter-spacing:.005em}
+h2{font-size:clamp(2.1rem,5vw,3.4rem);text-transform:uppercase}
+h3{font-size:1.45rem;text-transform:uppercase}
+.eyebrow{font:700 .78rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--orange-hi)}
+.lead{color:var(--muted);font-size:1.08rem;max-width:60ch;margin:0}
+:focus-visible{outline:3px solid var(--orange-hi);outline-offset:3px;border-radius:6px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:.55rem;justify-content:center;font:700 1rem/1 var(--body);padding:.95rem 1.35rem;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s,border-color .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-zap{background:var(--orange);color:#fff}
+.btn-zap:hover{background:var(--orange-hi)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--orange)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(10,18,48,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1rem;padding-block:.6rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex:none}
+.brand img{width:46px;height:46px}
+.brand b{font:italic 800 1.35rem/0.9 var(--display);text-transform:uppercase}
+.brand b span{display:block;color:var(--orange)}
+nav.menu{display:flex;gap:1.4rem;margin-left:auto}
+nav.menu a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+nav.menu a:hover{color:var(--ink)}
+.top .btn{padding:.7rem 1rem;font-size:.92rem}
+@media (max-width:900px){nav.menu{display:none}.top .btn{margin-left:auto}}
+@media (max-width:420px){.top .btn .lbl{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::after{content:"";position:absolute;right:-12%;top:-30%;width:70%;height:160%;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(242,106,27,.07) 46px 50px);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding-block:3.2rem 3.6rem;position:relative;z-index:1}
+.hero h1{font-size:clamp(3.2rem,9vw,6.4rem);text-transform:uppercase;font-weight:900}
+.hero h1 em{color:var(--orange);font-style:italic;display:block}
+.hero p.lead{margin:1.2rem 0 1.8rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
+.marcas{display:flex;flex-wrap:wrap;gap:.5rem;margin:-0.6rem 0 .6rem}
+.todas{margin:0 0 1.6rem;color:var(--muted);font-weight:600}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem}
+@media (max-width:640px){.spec{grid-template-columns:1fr}}
+.spec div{border:1px solid var(--orange);border-radius:var(--r);padding:1.4rem;background:linear-gradient(135deg,rgba(242,106,27,.2),var(--navy-2));display:grid;gap:.4rem}
+.spec b{font:italic 900 clamp(2.2rem,6vw,3.2rem)/1 var(--display);text-transform:uppercase}
+.spec p{margin:0;color:var(--muted)}
+.pay{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.pay span{border:1px solid var(--line);border-radius:999px;padding:.4rem .8rem;font-weight:600;font-size:.9rem;background:var(--navy)}
+.marcas span{font:italic 800 1.05rem/1 var(--display);text-transform:uppercase;letter-spacing:.04em;padding:.5rem .85rem;border-radius:8px;background:var(--navy-2);border:1px solid var(--line)}
+.marcas span:last-child{background:var(--orange);border-color:var(--orange);color:#fff}
+.feat{grid-column:auto;background:linear-gradient(135deg,rgba(242,106,27,.22),var(--navy-2)) !important;border-color:var(--orange) !important}
+@media (max-width:520px){.feat{grid-column:auto}}
+.tag{align-self:flex-start;font:700 .7rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--orange);color:#fff;padding:.35rem .55rem;border-radius:6px}
+.exp-badge{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 .9rem 1rem;vertical-align:middle}
+.exp-badge b{font:italic 900 2.4rem/1 var(--display);color:var(--orange)}
+.exp-badge span{font:700 .78rem/1.15 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+@media (max-width:480px){.exp-badge{margin-left:0;display:flex}}
+.ph{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative;background:var(--navy-2)}
+.ph img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.ph.wide img{aspect-ratio:16/9}
+.ph figcaption{position:absolute;left:12px;bottom:12px;background:rgba(10,18,48,.86);font-weight:700;padding:.45rem .8rem;border-radius:999px;font-size:.9rem}
+.ph.team img{aspect-ratio:1200/668}
+.ph.uni img{aspect-ratio:1200/637}
+.exp{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+@media (max-width:860px){.exp{grid-template-columns:1fr;gap:2rem}}
+.exp-txt{display:grid;gap:1rem;min-width:0}
+.exp-num{font:italic 900 clamp(6rem,16vw,10rem)/.8 var(--display);color:var(--orange);letter-spacing:-.02em}
+.exp-num sup{font-size:.45em;vertical-align:top;color:var(--ink)}
+.exp-list{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+.exp-list li{padding-left:1.6rem;position:relative;font-weight:600}
+.exp-list li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:12px;border-radius:3px;background:var(--orange);transform:skewX(-14deg)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.2rem}
+@media (max-width:560px){.duo{grid-template-columns:1fr}}
+.duo .ph img{aspect-ratio:4/3}
+.pecas .ph{margin-bottom:1.2rem}
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:900px){.arts{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.arts{grid-template-columns:1fr}}
+.art{position:relative;overflow:hidden;border-radius:18px;padding:1.3rem;display:grid;gap:.6rem;background:radial-gradient(120% 90% at 100% 0%,rgba(242,106,27,.28),transparent 55%),var(--navy);border:1px solid var(--line);min-width:0;break-inside:avoid}
+.art::after{content:"";position:absolute;right:-30px;bottom:-30px;width:140px;height:140px;background:repeating-linear-gradient(115deg,transparent 0 12px,rgba(242,106,27,.12) 12px 15px);pointer-events:none}
+.art-top{display:flex;justify-content:space-between;align-items:center;font:700 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.art-n{color:var(--orange-hi);font-size:.9rem}
+.art svg{width:100%;max-height:170px;display:block}
+.art h3{font-size:1.7rem}
+.art p{margin:0;color:var(--muted);font-size:.95rem}
+.art-cta{font-weight:700;color:var(--orange-hi);text-decoration:none;position:relative;z-index:1}
+.real{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem}
+.real .r-wide{grid-column:1/-1}
+.real .r-wide img{aspect-ratio:1300/600}
+.real .r-tall img{aspect-ratio:3/4;object-position:center 30%}
+@media (max-width:640px){.real{grid-template-columns:1fr 1fr}.real .r-tall:last-child{grid-column:1/-1}.real .r-tall:last-child img{aspect-ratio:4/3}}
+.art-wide{grid-column:1/-1;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:1.5rem}
+.art-wide svg{max-height:220px}
+.art-wide h3{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.aw-txt{display:grid;gap:.7rem;min-width:0}
+@media (max-width:640px){.art-wide{grid-template-columns:1fr}}
+.status{display:inline-flex;align-items:center;gap:.55rem;font:600 .9rem/1 var(--mono);padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;margin-bottom:1.3rem;background:var(--navy-2)}
+.status i{width:10px;height:10px;border-radius:50%;background:var(--muted)}
+.status.open i{background:var(--ok);box-shadow:0 0 0 4px rgba(60,207,122,.18)}
+.status.closed i{background:var(--bad)}
+.hero-media{position:relative}
+.hero-media figure{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);transform:rotate(1.5deg);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.hero-media img{width:100%;aspect-ratio:864/485;object-fit:cover}
+.hero-media .badge{position:absolute;left:-14px;bottom:-18px;width:120px;height:120px;transform:rotate(-8deg);filter:drop-shadow(0 12px 22px rgba(0,0,0,.5))}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-media{max-width:520px}.hero-media .badge{width:92px;height:92px;left:-6px}}
+
+/* faixa de dados */
+.strip{background:var(--orange);color:#fff}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding-block:1.1rem}
+.strip div{display:flex;gap:.7rem;align-items:center;min-width:0}
+.strip svg{width:26px;height:26px;flex:none}
+.strip small{display:block;font:700 .7rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.strip strong{font-weight:700;line-height:1.25}
+@media (max-width:760px){.strip .wrap{grid-template-columns:1fr}}
+
+section{padding-block:4.5rem}
+.sec-head{display:grid;gap:.8rem;margin-bottom:2.2rem}
+.alt{background:var(--navy-2);border-block:1px solid var(--line)}
+
+/* serviços */
+.grid-serv{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media (max-width:1000px){.grid-serv{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.grid-serv{grid-template-columns:1fr}}
+.serv{background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r);padding:1.3rem;display:flex;flex-direction:column;gap:.7rem;min-width:0;transition:border-color .15s}
+.serv:hover{border-color:var(--orange)}
+.serv .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(242,106,27,.14);color:var(--orange-hi)}
+.serv .ic svg{width:24px;height:24px}
+.serv p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.serv a{font-weight:700;color:var(--orange-hi);text-decoration:none;font-size:.92rem}
+.serv a:hover{text-decoration:underline}
+
+/* peças */
+.pecas{display:grid;grid-template-columns:.85fr 1.15fr;gap:2.5rem;align-items:start}
+@media (max-width:860px){.pecas{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{border:1px solid var(--line);background:var(--navy);border-radius:999px;padding:.55rem .95rem;font-weight:600;font-size:.95rem}
+.chip b{color:var(--orange-hi);font-family:var(--mono);font-size:.78rem;margin-right:.35rem}
+.brands{margin-top:1.5rem;color:var(--muted);font-size:.95rem}
+.brands strong{color:var(--ink)}
+
+/* orçamento */
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+@media (max-width:860px){.quote{grid-template-columns:1fr}}
+form.card,.card{background:var(--navy-2);border:1px solid var(--line);border-radius:18px;padding:1.5rem}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.fields .full{grid-column:1/-1}
+@media (max-width:480px){.fields{grid-template-columns:1fr}}
+label{display:grid;gap:.35rem;font-weight:600;font-size:.9rem}
+input,select,textarea{width:100%;font:500 1rem var(--body);color:var(--ink);background:var(--navy);border:1px solid var(--line);border-radius:10px;padding:.75rem .85rem}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange)}
+textarea{min-height:86px;resize:vertical}
+fieldset{border:0;padding:0;margin:0}
+legend{font-weight:600;font-size:.9rem;margin-bottom:.5rem}
+.checks{display:flex;flex-wrap:wrap;gap:.5rem}
+.checks label{display:flex;align-items:center;gap:.45rem;font-weight:500;background:var(--navy);border:1px solid var(--line);border-radius:999px;padding:.45rem .8rem;cursor:pointer}
+.checks input{width:auto;accent-color:var(--orange)}
+.checks label:has(input:checked){border-color:var(--orange);background:rgba(242,106,27,.12)}
+.preview{font:500 .88rem/1.55 var(--mono);white-space:pre-wrap;background:var(--navy);border:1px dashed var(--line);border-radius:12px;padding:1rem;color:var(--muted);margin:0;overflow-wrap:anywhere}
+.note{font-size:.85rem;color:var(--muted);margin:.8rem 0 0}
+
+/* conta-giros */
+.gauge-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+@media (max-width:860px){.gauge-wrap{grid-template-columns:1fr}}
+.gauge{width:100%;max-width:420px;margin:0 auto}
+.gauge text{font-family:var(--mono)}
+.meter-list{display:grid;gap:1rem;margin-top:1.2rem}
+.meter{display:grid;gap:.35rem}
+.meter .row{display:flex;justify-content:space-between;gap:1rem;font-size:.92rem}
+.meter .row span:last-child{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+.bar{height:10px;border-radius:999px;background:var(--navy);border:1px solid var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:inherit;transition:width .4s}
+
+/* etapas */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;counter-reset:s}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.step{border-top:3px solid var(--orange);padding-top:1rem;display:grid;gap:.5rem}
+.step::before{counter-increment:s;content:"0" counter(s);font:700 .85rem var(--mono);color:var(--orange-hi)}
+.step p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* diferenciais */
+.why{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem}
+@media (max-width:1100px){.why{grid-template-columns:repeat(3,1fr)}}@media (max-width:760px){.why{grid-template-columns:repeat(2,1fr)}}@media (max-width:560px){.why{grid-template-columns:1fr}}
+.why div{display:grid;gap:.5rem}
+.why p{margin:0;color:var(--muted)}
+
+/* dicas */
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:860px){.tips{grid-template-columns:1fr}}
+.tip{background:var(--navy);border:1px solid var(--line);border-radius:var(--r);padding:1.3rem;display:grid;gap:.5rem;align-content:start}
+.tip .k{font:700 1.6rem/1 var(--display);font-style:italic;color:var(--orange-hi)}
+.tip p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* FAQ */
+.faq{display:grid;gap:.7rem;max-width:820px}
+details{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;padding:0 1.1rem}
+summary{cursor:pointer;font-weight:700;padding:1rem 0;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--orange-hi);font:700 1.3rem/1 var(--mono)}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 1rem;color:var(--muted)}
+
+/* contato */
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+.map-card{background:linear-gradient(135deg,var(--navy-3),var(--navy-2));border:1px solid var(--line);border-radius:18px;padding:1.6rem;display:grid;gap:1rem;position:relative;overflow:hidden}
+.map-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:34px 34px;opacity:.5;pointer-events:none}
+.map-card > *{position:relative}
+.addr{font:italic 800 clamp(1.6rem,4vw,2.3rem)/1.05 var(--display);text-transform:uppercase}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:.6rem 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-family:var(--mono);color:var(--muted)}
+.hours tr.today td{color:var(--ink);font-weight:700}
+.hours tr.today td:last-child{color:var(--orange-hi)}
+.line-copy{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.8rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.line-copy span{font-family:var(--mono);font-size:1.05rem;user-select:all}
+.copy{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:.35rem .7rem;font:600 .82rem var(--body);cursor:pointer}
+.copy:hover{border-color:var(--orange)}
+
+footer{border-top:1px solid var(--line);padding-block:2rem 6rem;color:var(--muted);font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+footer img{width:54px;height:54px}
+
+.float-zap{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.45);text-decoration:none}
+.float-zap svg{width:32px;height:32px}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--navy);font-weight:700;padding:.6rem 1rem;border-radius:999px;z-index:80}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.5 5 5.15-1.35A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.06.8.82-2.98-.2-.31a8.2 8.2 0 1 1 6.91 3.81Zm4.5-6.14c-.25-.12-1.47-.72-1.7-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07s.88 2.4 1 2.57c.13.16 1.74 2.66 4.22 3.73 1.57.68 2.18.74 2.97.62.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.17-.47-.3Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-oil" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3s-5 6.2-5 10a5 5 0 0 0 10 0c0-3.8-5-10-5-10Z"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8M14.7 6.3 10 2 6 6l4.3 4.7M3 21l6-6"/></symbol>
+  <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v3M21 12h-3M12 21v-3M3 12h3" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-chain" viewBox="0 0 24 24"><rect x="2" y="8" width="10" height="8" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><rect x="12" y="8" width="10" height="8" rx="4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+  <symbol id="i-tire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-spring" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 3h10M7 21h10M7 6l10 2.5L7 11l10 2.5L7 16l10 2.5"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Pardal Alto Giro, início">
+      <img src="logo_s.png" alt="" width="46" height="46">
+      <b>Pardal<span>Alto Giro</span></b>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#adicionais">Adicionais</a>
+      <a href="#pecas">Moto peças</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#manutencao">Manutenção</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-zap js-zap" data-msg="Olá! Vim pelo site da Pardal Alto Giro e gostaria de atendimento." href="#"><svg><use href="#i-zap"/></svg><span class="lbl">Chamar no WhatsApp</span></a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" style="padding:0">
+    <div class="wrap">
+      <div>
+        <div class="status" id="status" role="status"><i></i><span>Verificando horário…</span></div>
+        <div class="exp-badge"><b>+40</b><span>anos de<br>experiência</span></div>
+        <h1>Sua moto<em>em alto giro</em></h1>
+        <p class="lead">Mais de 40 anos de experiência em motos. Oficina especializada em injeção eletrônica e loja de moto peças na Av. Potirendaba, em São José do Rio Preto. Revisão, óleo, freios, relação, elétrica e peças no balcão, com orçamento combinado antes de começar o serviço.</p>
+        <div class="marcas" aria-label="Especialidades"><span>Especialista Honda</span><span>Especialista Yamaha</span><span>Injeção eletrônica</span></div>
+        <p class="todas">Atendemos todas as marcas.</p>
+        <div class="cta-row">
+          <a class="btn btn-zap js-zap" data-msg="Olá! Gostaria de agendar um serviço na minha moto." href="#"><svg><use href="#i-zap"/></svg>Agendar pelo WhatsApp</a>
+          <a class="btn btn-ghost" href="#orcamento">Montar orçamento</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <figure><img src="fachada_g2.jpg" alt="Fachada da Pardal Alto Giro, oficina e moto peças, Av. Potirendaba 1192" width="864" height="485"></figure>
+        <img class="badge" src="logo_s.png" alt="Logo da Pardal Alto Giro" width="120" height="120">
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <div><svg><use href="#i-pin"/></svg><span><small>Endereço</small><strong>Av. Potirendaba, 1192 · Loja 1 · Vila São Joaquim</strong></span></div>
+      <div><svg><use href="#i-clock"/></svg><span><small>Horário</small><strong>Segunda a sexta, 7h30 às 18h00 · sábado e domingo fechado</strong></span></div>
+      <div><svg><use href="#i-zap"/></svg><span><small>WhatsApp · Telefone</small><strong>(17) 98808-6140 · (17) 3229-3115</strong></span></div>
+    </div>
+  </div>
+
+  <section id="experiencia">
+    <div class="wrap exp">
+      <figure class="ph team"><img src="equipe-hd.jpg" alt="Equipe da Pardal Alto Giro com a bandeira da oficina" width="1200" height="668" loading="lazy"><figcaption>A família Pardal Alto Giro</figcaption></figure>
+      <div class="exp-txt">
+        <span class="eyebrow">Experiência</span>
+        <div class="exp-num">40<sup>+</sup></div>
+        <h2>Confie em quem tem experiência</h2>
+        <p class="lead">O Pardal mexe com moto há mais de 40 anos. Essa estrada toda está em cada diagnóstico: ouvir o motor, achar a falha certa e trocar só o que precisa. Hoje, com equipamento para injeção eletrônica e peças no balcão.</p>
+        <ul class="exp-list">
+          <li>Mais de 40 anos de oficina</li>
+          <li>Especialista Honda e Yamaha</li>
+          <li>Diagnóstico de injeção com scanner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Oficina</span>
+        <h2>Serviços</h2>
+        <p class="lead">Manutenção e reparo de motocicletas e motonetas de todas as marcas, com especialidade em Honda e Yamaha, da revisão de rotina ao conserto. Toque em um serviço para pedir orçamento direto no WhatsApp.</p>
+      </div>
+      <div class="spec"><div><span class="eyebrow">Especialidade</span><b>Honda</b><p>CG, Biz, Pop, Bros, XRE, PCX e demais modelos da marca.</p></div><div><span class="eyebrow">Especialidade</span><b>Yamaha</b><p>Factor, Fazer, Crosser, Lander, NMax e demais modelos da marca.</p></div></div>
+      <div class="grid-serv" id="gridServ"></div>
+    </div>
+  </section>
+
+<section id="adicionais" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Trabalhos adicionais</span>
+        <h2>Mecânica, usinagem e freios</h2>
+        <p class="lead">Serviços que muita oficina manda para fora, a Pardal faz aqui dentro, com torno e retífica próprios. Menos tempo de moto parada e um responsável só pelo serviço.</p>
+      </div>
+      <div class="real">
+        <figure class="ph r-wide"><img src="real-torno-hd.jpg" alt="Pardal trabalhando no torno da oficina" width="1300" height="600" loading="lazy"><figcaption>Torno próprio na oficina</figcaption></figure>
+        <figure class="ph r-tall"><img src="real-retifica-hd.jpg" alt="Pardal na máquina de retífica" width="375" height="812" loading="lazy"><figcaption>O Pardal na retífica</figcaption></figure>
+        <figure class="ph r-tall"><img src="real-retifica2-hd.jpg" alt="Pardal com a camisa da oficina operando a retífica" width="375" height="812" loading="lazy"><figcaption>Retífica de motor</figcaption></figure>
+        <figure class="ph r-tall"><img src="real-torno2-hd.jpg" alt="Pardal usinando peça no torno" width="462" height="1000" loading="lazy"><figcaption>Usinagem sob medida</figcaption></figure>
+      </div>
+      <div class="arts">
+        <article class="art art-wide">
+          <svg viewBox="0 0 200 150" aria-hidden="true"><circle cx="52" cy="112" r="26" fill="none" stroke="#eef1fa" stroke-width="8"/><circle cx="152" cy="112" r="26" fill="none" stroke="#eef1fa" stroke-width="8"/><path d="M52 112l34-40h40l26 40M86 72l-10-14h-14M126 72l12-14h16" fill="none" stroke="#f26a1b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="104" cy="96" r="10" fill="#a3add0"/><path d="M150 28l14 14-34 34-10-4-4-10z" fill="#a3add0"/><circle cx="166" cy="26" r="9" fill="none" stroke="#a3add0" stroke-width="5"/></svg>
+          <div class="aw-txt">
+            <div class="art-top"><span class="art-n">00</span><span class="art-brand">Pardal Alto Giro</span></div>
+            <h3>Oficina de moto: reparos e mecânica em geral</h3>
+            <p>Do barulho estranho à moto que não pega. Motor, câmbio, embreagem, parte elétrica e qualquer reparo, em todas as marcas, com a experiência de mais de 40 anos.</p>
+            <a class="js-zap art-cta" href="#" data-msg="Olá! Minha moto precisa de um reparo. Pode me ajudar?">Pedir orçamento →</a>
+          </div>
+        </article>
+        <article class="art">
+          <div class="art-top"><span class="art-n">01</span><span class="art-brand">Pardal Alto Giro</span></div>
+          <svg viewBox="0 0 200 150" aria-hidden="true"><rect x="20" y="118" width="160" height="14" rx="3" fill="#a3add0"/><rect x="30" y="70" width="40" height="48" rx="4" fill="#eef1fa"/><circle cx="50" cy="94" r="10" fill="#0a1230"/><rect x="70" y="88" width="70" height="12" fill="#f26a1b"/><path d="M140 82h10l12 12-12 12h-10z" fill="#eef1fa"/><rect x="118" y="104" width="10" height="14" fill="#a3add0"/><path d="M84 80l4-10M100 78l2-12M114 80l6-10" stroke="#f26a1b" stroke-width="3" stroke-linecap="round"/></svg>
+          <h3>Torno</h3><p>Usinagem de buchas, eixos, espaçadores e ajustes de peças sob medida.</p>
+          <a class="js-zap art-cta" href="#" data-msg="Olá! Gostaria de um orçamento de torno.">Pedir orçamento →</a>
+        </article><article class="art">
+          <div class="art-top"><span class="art-n">02</span><span class="art-brand">Pardal Alto Giro</span></div>
+          <svg viewBox="0 0 200 150" aria-hidden="true"><rect x="64" y="36" width="72" height="20" rx="4" fill="#a3add0"/><rect x="58" y="56" width="84" height="56" rx="6" fill="#eef1fa"/><path d="M58 66h-14M58 80h-14M58 94h-14M142 66h14M142 80h14M142 94h14" stroke="#a3add0" stroke-width="5" stroke-linecap="round"/><circle cx="100" cy="84" r="16" fill="#0a1230"/><circle cx="100" cy="84" r="7" fill="#f26a1b"/><rect x="70" y="112" width="60" height="14" rx="3" fill="#f26a1b"/></svg>
+          <h3>Retífica de motor</h3><p>Cilindro, cabeçote, válvulas e virabrequim no padrão de medida.</p>
+          <a class="js-zap art-cta" href="#" data-msg="Olá! Gostaria de um orçamento de retífica de motor.">Pedir orçamento →</a>
+        </article><article class="art">
+          <div class="art-top"><span class="art-n">03</span><span class="art-brand">Pardal Alto Giro</span></div>
+          <svg viewBox="0 0 200 150" aria-hidden="true"><rect x="40" y="30" width="12" height="100" fill="#a3add0"/><rect x="148" y="30" width="12" height="100" fill="#a3add0"/><rect x="40" y="26" width="120" height="16" rx="3" fill="#eef1fa"/><rect x="92" y="42" width="16" height="30" fill="#f26a1b"/><rect x="80" y="72" width="40" height="10" rx="2" fill="#eef1fa"/><circle cx="100" cy="100" r="16" fill="none" stroke="#f26a1b" stroke-width="7"/><circle cx="100" cy="100" r="5" fill="#eef1fa"/><rect x="34" y="124" width="132" height="10" rx="2" fill="#eef1fa"/></svg>
+          <h3>Serviço de prensa</h3><p>Troca de rolamentos, buchas e caixa de direção com prensa hidráulica.</p>
+          <a class="js-zap art-cta" href="#" data-msg="Olá! Gostaria de um orçamento de serviço de prensa.">Pedir orçamento →</a>
+        </article><article class="art">
+          <div class="art-top"><span class="art-n">04</span><span class="art-brand">Pardal Alto Giro</span></div>
+          <svg viewBox="0 0 200 150" aria-hidden="true"><rect x="54" y="30" width="92" height="104" rx="8" fill="#eef1fa"/><rect x="80" y="22" width="40" height="16" rx="4" fill="#f26a1b"/><path d="M70 62l7 7 13-14M70 88l7 7 13-14M70 114l7 7 13-14" fill="none" stroke="#f26a1b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="98" y="60" width="34" height="7" rx="3" fill="#a3add0"/><rect x="98" y="86" width="34" height="7" rx="3" fill="#a3add0"/><rect x="98" y="112" width="34" height="7" rx="3" fill="#a3add0"/></svg>
+          <h3>Revisão completa</h3><p>Check-up de motor, transmissão, elétrica, suspensão e freios.</p>
+          <a class="js-zap art-cta" href="#" data-msg="Olá! Gostaria de um orçamento de revisão completa.">Pedir orçamento →</a>
+        </article><article class="art">
+          <div class="art-top"><span class="art-n">05</span><span class="art-brand">Pardal Alto Giro</span></div>
+          <svg viewBox="0 0 200 150" aria-hidden="true"><circle cx="92" cy="82" r="50" fill="#eef1fa"/><circle cx="92" cy="82" r="16" fill="#0a1230"/><g fill="#0a1230"><circle cx="126.0" cy="82.0" r="4"/><circle cx="116.1" cy="106.0" r="4"/><circle cx="92.0" cy="116.0" r="4"/><circle cx="68.0" cy="106.1" r="4"/><circle cx="58.0" cy="82.1" r="4"/><circle cx="67.9" cy="58.0" r="4"/><circle cx="91.9" cy="48.0" r="4"/><circle cx="116.0" cy="57.9" r="4"/></g><path d="M128 40a58 58 0 0 1 18 30l-20 6a38 38 0 0 0-12-20z" fill="#f26a1b"/></svg>
+          <h3>Freios</h3><p>Pastilhas, lonas, fluido, cabos e regulagem para frear na hora certa.</p>
+          <a class="js-zap art-cta" href="#" data-msg="Olá! Gostaria de um orçamento de freios.">Pedir orçamento →</a>
+        </article><article class="art">
+          <div class="art-top"><span class="art-n">06</span><span class="art-brand">Pardal Alto Giro</span></div>
+          <svg viewBox="0 0 200 150" aria-hidden="true"><circle cx="80" cy="84" r="44" fill="#eef1fa"/><circle cx="80" cy="84" r="14" fill="#0a1230"/><circle cx="80" cy="84" r="32" fill="none" stroke="#a3add0" stroke-width="2" stroke-dasharray="4 5"/><path d="M128 76h36l-6 8h-30z" fill="#f26a1b"/><path d="M118 80l10 0" stroke="#f26a1b" stroke-width="4"/><path d="M116 66l8-6M118 96l8 6M112 58l4-8" stroke="#f26a1b" stroke-width="3" stroke-linecap="round"/></svg>
+          <h3>Retífica de disco e tambor</h3><p>Passe no disco e no tambor de freio para tirar empeno, risco e trepidação.</p>
+          <a class="js-zap art-cta" href="#" data-msg="Olá! Gostaria de um orçamento de retífica de disco e tambor.">Pedir orçamento →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pecas">
+    <div class="wrap pecas">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow">Loja</span>
+        <h2>Moto peças no balcão</h2>
+        <p class="lead">A loja fica no mesmo endereço da oficina. Se a peça está aqui, o serviço sai mais rápido. Se você mesmo faz a manutenção, também vendemos a peça avulsa.</p>
+        <div class="cta-row" style="margin-top:1.2rem">
+          <a class="btn btn-zap js-zap" data-msg="Olá! Queria saber se vocês têm esta peça: (modelo da moto / peça)" href="#"><svg><use href="#i-zap"/></svg>Consultar uma peça</a>
+        </div>
+      </div>
+      <div>
+        <figure class="ph wide"><img style="aspect-ratio:16/9" src="srv-pecas.jpg" alt="Balcão de moto peças com prateleiras de pneus, óleos e peças" width="680" height="680" loading="lazy"></figure>
+        <div class="chips" id="chips"></div>
+        <p class="brands">Mande o <strong>modelo, ano e cilindrada</strong> da moto (ou uma foto da peça) e a gente confere disponibilidade e preço.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="orcamento">
+    <div class="wrap quote">
+      <div class="sec-head" style="margin:0;align-content:start">
+        <span class="eyebrow">Orçamento rápido</span>
+        <h2>Conte o que a moto precisa</h2>
+        <p class="lead">Preencha o que souber. O site monta a mensagem pronta e abre o WhatsApp da oficina. Nada é enviado sem você tocar em enviar no próprio WhatsApp.</p>
+        <div class="card" style="margin-top:1rem">
+          <p class="eyebrow" style="margin:0 0 .7rem">Prévia da mensagem</p>
+          <pre class="preview" id="preview"></pre>
+        </div>
+      </div>
+      <form class="card" id="qform" novalidate>
+        <div class="fields">
+          <label class="full" for="q-nome">Seu nome<input id="q-nome" name="nome" autocomplete="name" placeholder="Ex.: Carlos"></label>
+          <label for="q-moto">Moto (marca e modelo)<input id="q-moto" name="moto" placeholder="Ex.: Honda CG 160 Fan"></label>
+          <label for="q-ano">Ano<input id="q-ano" name="ano" inputmode="numeric" placeholder="Ex.: 2021"></label>
+          <label for="q-km">Quilometragem<input id="q-km" name="km" inputmode="numeric" placeholder="Ex.: 18.500"></label>
+          <label for="q-dia">Melhor dia para trazer
+            <select id="q-dia" name="dia">
+              <option value="">Tanto faz</option><option>Segunda</option><option>Terça</option><option>Quarta</option><option>Quinta</option><option>Sexta</option>
+            </select>
+          </label>
+          <fieldset class="full">
+            <legend>Serviços</legend>
+            <div class="checks" id="qchecks"></div>
+          </fieldset>
+          <label class="full" for="q-obs">O que está acontecendo?<textarea id="q-obs" name="obs" placeholder="Ex.: barulho na corrente, freio traseiro baixo, luz da injeção acesa…"></textarea></label>
+          <div class="full"><button type="submit" class="btn btn-zap" style="width:100%"><svg><use href="#i-zap"/></svg>Enviar pelo WhatsApp</button></div>
+        </div>
+        <p class="note">Se o WhatsApp não abrir, chame no (17) 98808-6140 ou ligue (17) 3229-3115.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="manutencao" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Conta-giros da manutenção</span>
+        <h2>Sua moto está em dia?</h2>
+        <p class="lead">Informe a quilometragem atual e a da última troca de óleo e da última revisão. A agulha mostra o quanto você já rodou do intervalo de referência.</p>
+      </div>
+      <div class="gauge-wrap">
+        <div>
+          <svg class="gauge" viewBox="0 0 320 210" role="img" aria-labelledby="gTitle">
+            <title id="gTitle">Conta-giros do intervalo de troca de óleo</title>
+            <g id="ticks"></g>
+            <path id="arcBase" fill="none" stroke="#1a2858" stroke-width="16" stroke-linecap="round"/>
+            <path id="arcRed" fill="none" stroke="#ff5a4f" stroke-width="16"/>
+            <line id="needle" x1="160" y1="170" x2="160" y2="52" stroke="#ff8f45" stroke-width="5" stroke-linecap="round" style="transform-origin:160px 170px;transition:transform .6s cubic-bezier(.3,1.5,.5,1)"/>
+            <circle cx="160" cy="170" r="12" fill="#f26a1b"/>
+            <text id="gVal" x="160" y="205" text-anchor="middle" fill="#eef1fa" font-size="16" font-weight="700">—</text>
+          </svg>
+        </div>
+        <form class="card" id="mform" onsubmit="return false">
+          <div class="fields">
+            <label for="m-atual">Km atual<input id="m-atual" inputmode="numeric" value="18500"></label>
+            <label for="m-oleo">Km na última troca de óleo<input id="m-oleo" inputmode="numeric" value="16200"></label>
+            <label for="m-rev">Km na última revisão<input id="m-rev" inputmode="numeric" value="10500"></label>
+            <label for="m-int">Intervalo do óleo (km)
+              <select id="m-int"><option value="1000">1.000 (primeira troca)</option><option value="3000" selected>3.000</option><option value="4000">4.000</option><option value="6000">6.000</option></select>
+            </label>
+          </div>
+          <div class="meter-list" id="meters"></div>
+          <p class="note">Valores de exemplo preenchidos. Os intervalos são referência geral: o manual do fabricante da sua moto é quem manda.</p>
+          <a class="btn btn-zap js-zap" style="margin-top:1rem;width:100%" id="mzap" data-msg="Olá! Quero agendar a manutenção da minha moto." href="#"><svg><use href="#i-zap"/></svg>Agendar manutenção</a>
+        </form>
+      </div>
+
+      <div class="tips" style="margin-top:2.5rem">
+        <div class="tip"><span class="k">1.000 km</span><h3>Primeira revisão</h3><p>Moto nova costuma ter a primeira revisão com 1.000 km ou 6 meses, o que vier primeiro.</p></div>
+        <div class="tip"><span class="k">Toda semana</span><h3>Calibragem</h3><p>Pneu baixo gasta mais rápido, aumenta o consumo e piora a frenagem. Calibre com o pneu frio.</p></div>
+        <div class="tip"><span class="k">6 meses</span><h3>Moto parada também</h3><p>Se você roda pouco, faça a revisão por tempo. Óleo envelhece e borrachas ressecam mesmo sem rodar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Do WhatsApp à retirada</h2>
+      </div>
+      <div class="duo">
+        <figure class="ph"><img src="srv-oleo.jpg" alt="Troca de óleo do motor de uma Yamaha Factor" width="680" height="680" loading="lazy"><figcaption>Troca de óleo e filtros</figcaption></figure>
+        <figure class="ph"><img src="srv-relacao.jpg" alt="Mecânico trocando o kit relação de uma moto" width="680" height="680" loading="lazy"><figcaption>Kit relação e freios</figcaption></figure>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Chame</h3><p>Mande o modelo da moto e o que ela está fazendo. Pode ser áudio ou foto.</p></div>
+        <div class="step"><h3>Diagnóstico</h3><p>Traga a moto em horário comercial. O mecânico avalia e explica o que encontrou.</p></div>
+        <div class="step"><h3>Aprovação</h3><p>Você recebe o orçamento de peças e mão de obra e só depois o serviço começa.</p></div>
+        <div class="step"><h3>Retirada</h3><p>Avisamos pelo WhatsApp quando a moto estiver pronta, com as peças trocadas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Por que a Pardal</span>
+        <h2>Oficina de bairro, peça na mão</h2>
+      </div>
+      <figure class="ph uni" style="margin-bottom:2rem"><img src="uniformes-hd.jpg" alt="Equipe de costas com o uniforme Pardal Alto Giro, Honda e Yamaha" width="1200" height="637" loading="lazy"><figcaption>Atendimento de família, com a camisa da casa</figcaption></figure>
+      <div class="why">
+        <div><h3>40 anos de estrada</h3><p>Experiência de quem já viu de tudo em moto, do carburador à injeção eletrônica.</p></div>
+        <div><h3>Oficina e loja juntas</h3><p>Peças de giro rápido no balcão, sem esperar entrega de fornecedor para serviços simples.</p></div>
+        <div><h3>Orçamento antes</h3><p>Nada é trocado sem a sua aprovação. Você sabe o valor antes de o serviço começar.</p></div>
+        <div><h3>Especialista em injeção</h3><p>Diagnóstico de injeção eletrônica com equipamento, em vez de troca de peça no chute.</p></div>
+        <div><h3>Atendimento direto</h3><p>Fala com quem mexe na moto pelo WhatsApp, do agendamento até a retirada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Perguntas</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Preciso agendar ou posso chegar direto?</summary><p>Pode chegar em horário comercial, mas agendando pelo WhatsApp a gente já separa a peça e reduz sua espera.</p></details>
+        <details><summary>Quais motos vocês atendem?</summary><p>Todas as marcas de motocicletas e motonetas. Nossa especialidade é Honda e Yamaha. Mande o modelo e o ano pelo WhatsApp para confirmarmos o serviço.</p></details>
+        <details><summary>A luz da injeção acendeu. O que faço?</summary><p>Evite rodar forçando a moto e traga para diagnóstico. Somos oficina especializada em injeção eletrônica e lemos a falha com scanner antes de trocar qualquer peça.</p></details>
+        <details><summary>Posso levar a minha própria peça?</summary><p>Consulte pelo WhatsApp antes. A mão de obra é combinada caso a caso.</p></details>
+        <details><summary>De quanto em quanto tempo troco o óleo?</summary><p>Depende da moto e do óleo usado. Como referência, muitas motos de baixa cilindrada pedem troca entre 3.000 e 4.000 km, e a primeira com 1.000 km. Confira no manual ou pergunte para a gente.</p></details>
+        <details><summary>Como sei que a relação precisa ser trocada?</summary><p>Corrente esticando com frequência, barulho, dentes da coroa ou do pinhão pontudos ou gastos de um lado só. Traga para uma avaliação.</p></details>
+        <details><summary>Quais formas de pagamento vocês aceitam?</summary><p>Pix e cartões de crédito e débito de todas as bandeiras.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="alt">
+    <div class="wrap contact">
+      <div class="map-card">
+        <span class="eyebrow">Onde estamos</span>
+        <div class="addr">Av. Potirendaba, 1192<br>Loja 1 · Vila São Joaquim</div>
+        <p style="margin:0;color:var(--muted)">São José do Rio Preto, SP · CEP 15080-000</p>
+        <div class="cta-row">
+          <a class="btn btn-zap" href="https://www.google.com/maps/search/?api=1&query=Av.+Potirendaba%2C+1192%2C+S%C3%A3o+Jos%C3%A9+do+Rio+Preto+-+SP%2C+15080-000" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Abrir no Google Maps</a>
+          <a class="btn btn-ghost" href="https://waze.com/ul?q=Av.%20Potirendaba%201192%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto&navigate=yes" target="_blank" rel="noopener">Ir com o Waze</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:.6rem">Horário de funcionamento</h3>
+        <table class="hours" id="hours">
+          <tbody>
+            <tr data-d="1"><td>Segunda</td><td>7h30 – 18h00</td></tr>
+            <tr data-d="2"><td>Terça</td><td>7h30 – 18h00</td></tr>
+            <tr data-d="3"><td>Quarta</td><td>7h30 – 18h00</td></tr>
+            <tr data-d="4"><td>Quinta</td><td>7h30 – 18h00</td></tr>
+            <tr data-d="5"><td>Sexta</td><td>7h30 – 18h00</td></tr>
+            <tr data-d="6"><td>Sábado</td><td>Fechado</td></tr>
+            <tr data-d="0"><td>Domingo</td><td>Fechado</td></tr>
+          </tbody>
+        </table>
+        <div class="line-copy" style="margin-top:.6rem"><span>WhatsApp (17) 98808-6140</span><button class="copy" type="button" data-copy="(17) 98808-6140">Copiar WhatsApp</button></div>
+        <div class="line-copy"><span>Fixo (17) 3229-3115</span><button class="copy" type="button" data-copy="(17) 3229-3115">Copiar telefone</button></div>
+        <div class="pay" aria-label="Formas de pagamento"><span>Pix</span><span>Cartão de crédito</span><span>Cartão de débito</span><span>Todas as bandeiras</span></div>
+        <div class="line-copy"><span>@pardalaltogiro</span><a class="copy" href="https://www.instagram.com/pardalaltogiro/" target="_blank" rel="noopener" style="text-decoration:none">Ver Instagram</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;gap:.9rem;align-items:center"><img src="logo_s.png" alt="" width="54" height="54"><div><strong style="color:var(--ink)">Pardal Alto Giro · Oficina e Moto Peças</strong><br>LRP Moto Peças RP Ltda · CNPJ 66.434.500/0001-40</div></div>
+    <div>Av. Potirendaba, 1192, Loja 1 · São José do Rio Preto, SP</div>
+  </div>
+</footer>
+
+<a class="float-zap js-zap" data-msg="Olá! Vim pelo site da Pardal Alto Giro." href="#" aria-label="Falar no WhatsApp"><svg><use href="#i-zap"/></svg></a>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+  const ZAP = "5517988086140";
+  const zapUrl = m => "https://wa.me/" + ZAP + "?text=" + encodeURIComponent(m);
+  const setZap = a => { a.href = zapUrl(a.dataset.msg || "Olá!"); a.target = "_blank"; a.rel = "noopener"; };
+
+  const SERV = [
+    ["i-wrench","Revisão completa","Check-up geral de motor, freios, transmissão, elétrica, pneus e suspensão."],
+    ["i-oil","Troca de óleo e filtros","Óleo do motor, filtro de óleo e filtro de ar no intervalo certo para a sua moto."],
+    ["i-disc","Freios","Pastilhas, lonas, discos, cabos e troca do fluido de freio."],
+    ["i-chain","Relação","Kit coroa, pinhão e corrente, com ajuste e lubrificação."],
+    ["i-bolt","Elétrica e bateria","Bateria, partida, carga, chicote, lâmpadas, setas e painel."],
+    ["i-tire","Pneus e câmaras","Troca, reparo, calibragem e avaliação de desgaste."],
+    ["i-spring","Suspensão","Retentores, óleo da bengala e amortecedores."],
+    ["i-chip","Injeção eletrônica","Nossa especialidade: diagnóstico com scanner, limpeza de bicos, corpo de borboleta, sensores e falhas de alimentação.",1]
+  ];
+  const grid = document.getElementById("gridServ");
+  const ord=[...SERV].sort((a,b)=>(b[3]||0)-(a[3]||0));
+  grid.innerHTML = ord.map(([ic,t,d,f]) =>
+    `<article class="serv${f?" feat":""}">${f?'<span class="tag">Especialidade</span>':""}<div class="ic"><svg><use href="#${ic}"/></svg></div><h3>${t}</h3><p>${d}</p><a class="js-zap" href="#" data-msg="Olá! Gostaria de um orçamento de ${t.toLowerCase()} para a minha moto.">Pedir orçamento →</a></article>`
+  ).join("");
+
+  const PECAS = ["Óleos e filtros","Pastilhas e lonas","Kit relação","Pneus e câmaras","Baterias","Velas","Lâmpadas e setas","Cabos de embreagem e acelerador","Retentores","Retrovisores e manetes","Acessórios"];
+  document.getElementById("chips").innerHTML = PECAS.map((p,i)=>`<span class="chip"><b>${String(i+1).padStart(2,"0")}</b>${p}</span>`).join("");
+
+  const qchecks = document.getElementById("qchecks");
+  qchecks.innerHTML = SERV.map(([,t],i)=>`<label for="qc-${i}"><input type="checkbox" id="qc-${i}" value="${t}">${t}</label>`).join("") +
+    `<label for="qc-p"><input type="checkbox" id="qc-p" value="Compra de peça">Compra de peça</label>`;
+
+  document.querySelectorAll(".js-zap").forEach(setZap);
+
+  // orçamento
+  const qf = document.getElementById("qform"), prev = document.getElementById("preview");
+  function buildMsg(){
+    const v = id => (document.getElementById(id).value || "").trim();
+    const servs = [...qf.querySelectorAll("#qchecks input:checked")].map(i=>i.value);
+    const L = ["Olá, Pardal Alto Giro! Gostaria de um orçamento."];
+    if (v("q-nome")) L.push("Nome: " + v("q-nome"));
+    const moto = [v("q-moto"), v("q-ano")].filter(Boolean).join(" · ");
+    if (moto) L.push("Moto: " + moto);
+    if (v("q-km")) L.push("Km: " + v("q-km"));
+    if (servs.length) L.push("Serviços: " + servs.join(", "));
+    if (v("q-obs")) L.push("O que acontece: " + v("q-obs"));
+    if (v("q-dia")) L.push("Melhor dia: " + v("q-dia"));
+    return L.join("\n");
+  }
+  const refresh = () => { prev.textContent = buildMsg(); };
+  qf.addEventListener("input", refresh); qf.addEventListener("change", refresh); refresh();
+  qf.addEventListener("submit", e => { e.preventDefault(); const a=document.createElement("a"); a.href=zapUrl(buildMsg()); a.target="_blank"; a.rel="noopener"; document.body.appendChild(a); a.click(); a.remove(); });
+
+  // horário (America/Sao_Paulo)
+  function spNow(){
+    const p = new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+    const g = t => p.find(x=>x.type===t).value;
+    const wd = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(g("weekday"));
+    return {wd, min: (parseInt(g("hour"),10)%24)*60 + parseInt(g("minute"),10)};
+  }
+  function updStatus(){
+    const {wd,min} = spNow(), el = document.getElementById("status"), sp = el.querySelector("span");
+    const weekday = wd>=1 && wd<=5, open = weekday && min>=450 && min<1080;
+    el.classList.toggle("open",open); el.classList.toggle("closed",!open);
+    if (open) sp.textContent = "Aberto agora · fecha às 18h00";
+    else if (weekday && min<450) sp.textContent = "Fechado · abre hoje às 7h30";
+    else sp.textContent = "Fechado · abre " + (wd===5||wd===6 ? "segunda" : "amanhã") + " às 7h30";
+    document.querySelectorAll("#hours tr").forEach(tr=>tr.classList.toggle("today", +tr.dataset.d===wd));
+  }
+  updStatus(); setInterval(updStatus, 60000);
+
+  // conta-giros
+  const CX=160, CY=170, R=118, A0=-120, A1=120;
+  const pt = (a,r=R) => { const t=(a-90)*Math.PI/180; return [CX+r*Math.cos(t), CY+r*Math.sin(t)]; };
+  const arc = (a,b) => { const [x0,y0]=pt(a),[x1,y1]=pt(b); return `M${x0.toFixed(1)} ${y0.toFixed(1)} A${R} ${R} 0 ${b-a>180?1:0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`; };
+  document.getElementById("arcBase").setAttribute("d", arc(A0,A1));
+  const RED0 = A0 + (A1-A0)*0.8;
+  document.getElementById("arcRed").setAttribute("d", arc(RED0,A1));
+  let tk="";
+  for(let i=0;i<=10;i++){
+    const a=A0+(A1-A0)*i/10, [x0,y0]=pt(a,R-14), [x1,y1]=pt(a,R-26), [lx,ly]=pt(a,R-40);
+    tk+=`<line x1="${x0.toFixed(1)}" y1="${y0.toFixed(1)}" x2="${x1.toFixed(1)}" y2="${y1.toFixed(1)}" stroke="${i>=8?"#ff5a4f":"#a3add0"}" stroke-width="2"/>`;
+    if(i%2===0) tk+=`<text x="${lx.toFixed(1)}" y="${(ly+4).toFixed(1)}" text-anchor="middle" font-size="11" fill="#a3add0">${i*10}</text>`;
+  }
+  tk+=`<text x="160" y="125" text-anchor="middle" font-size="10" fill="#a3add0" letter-spacing="1.5">% DO ÓLEO</text>`;
+  document.getElementById("ticks").innerHTML = tk;
+
+  const num = id => parseInt((document.getElementById(id).value||"").replace(/\D/g,""),10);
+  const fmt = n => n.toLocaleString("pt-BR");
+  function meterHtml(label, used, total){
+    const pct = Math.max(0, used/total*100), w = Math.min(100,pct);
+    const col = pct>=100 ? "var(--bad)" : pct>=80 ? "var(--warn)" : "var(--ok)";
+    const txt = pct>=100 ? `vencido há ${fmt(used-total)} km` : `faltam ${fmt(total-used)} km`;
+    return `<div class="meter"><div class="row"><span>${label}</span><span>${txt}</span></div><div class="bar"><i style="width:${w}%;background:${col}"></i></div></div>`;
+  }
+  function updGauge(){
+    const at=num("m-atual"), ol=num("m-oleo"), rv=num("m-rev"), it=+document.getElementById("m-int").value;
+    const box=document.getElementById("meters"), val=document.getElementById("gVal"), nd=document.getElementById("needle");
+    if (isNaN(at)||isNaN(ol)||at<ol){ box.innerHTML=`<p class="note">Confira os números: a km atual precisa ser maior que a da última troca.</p>`; val.textContent="—"; nd.style.transform=`rotate(${A0}deg)`; return; }
+    const usedO = at-ol, pct = usedO/it*100;
+    nd.style.transform = `rotate(${A0+(A1-A0)*Math.min(pct,110)/100}deg)`;
+    val.textContent = pct>=100 ? "Hora de trocar o óleo" : Math.round(pct) + "% do intervalo";
+    let h = meterHtml(`Óleo do motor (a cada ${fmt(it)} km)`, usedO, it);
+    if (!isNaN(rv) && at>=rv) h += meterHtml("Revisão geral (até 10.000 km)", at-rv, 10000);
+    box.innerHTML = h;
+    const mz=document.getElementById("mzap");
+    mz.dataset.msg = `Olá! Minha moto está com ${fmt(at)} km e a última troca de óleo foi com ${fmt(ol)} km. Quero agendar a manutenção.`;
+    setZap(mz);
+  }
+  document.getElementById("mform").addEventListener("input", updGauge);
+  document.getElementById("mform").addEventListener("change", updGauge);
+  updGauge();
+
+  // copiar
+  const toast = document.getElementById("toast"); let tt;
+  const show = m => { toast.textContent=m; toast.hidden=false; clearTimeout(tt); tt=setTimeout(()=>toast.hidden=true,1800); };
+  document.querySelectorAll("button.copy[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+    const t=b.dataset.copy;
+    const fallback=()=>{ const s=b.previousElementSibling, r=document.createRange(); r.selectNodeContents(s); const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); show("Selecionado, use copiar"); };
+    try{ navigator.clipboard.writeText(t).then(()=>show("Número copiado"),fallback); }catch(e){ fallback(); }
+  }));
+})();
+</script>
+
+</body>
+</html>
